@@ -116,7 +116,7 @@ int main(int argc, char *argv[]) {
                 }
 
             } else if (events[i].events & EPOLLOUT) {
-
+                //需要判断是否为keep-alive
                 if (!users[sockfd].write()) {
                     users[sockfd].close_conn();
                 }
